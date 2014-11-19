@@ -1,0 +1,33 @@
+{exp:channel:entries channel="books" disable="categories|category_fields|member_data|pagination" require_entry="yes" show_future_entries="yes"}
+
+<div class="box">
+
+<!-- image details -->
+	<div class="details">
+
+
+
+
+{exp:ce_img:single src="{art_cover_image}" width="150" crop="yes" height="225" title="{title}" class="cover_image" style="margin-top:25px;"}
+
+
+<!--		<p>The content ...</p>-->
+	</div>
+
+
+
+<div class="buy">
+		<h4>Buy <em>{title}</em><br /> from these sellers</h4>
+
+{if isbn_paperback}
+
+{embed="book/_buy" isbn="{isbn}"}<br />
+
+
+</div>
+
+	</div>
+
+
+{/exp:channel:entries}
+

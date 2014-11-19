@@ -1,0 +1,130 @@
+{embed="global/_page_top" page_title="Clients" body_id="clients" meta="company"}
+				{if logged_in}
+{embed="clients/_top_section"}
+		
+	
+
+<div class="page_wrapper"><!-- these open the footer 	-->
+	<div class="container"><!-- these open the footer 	-->
+	
+	
+	
+			
+	{embed="clients/_client_list_text" key="value"}
+					
+
+
+
+					
+
+
+
+
+
+		<div class="row" style="{if segment_2 == 'alpha'}display:none;{/if}">
+<!-- /these open the footer 	-->
+			<div class="span12">
+				
+				
+				{!--
+				<div class="search_list_images" style="display: block ;">
+				 embed="clients/_client_list_images" 
+				</div>
+				--}
+				
+				
+				
+				
+				<div class="short_list" id="images">
+				
+				
+
+{exp:channel:entries channel="clients" limit="10000" disable="category_fields|member_data|pagination" orderby="person_name_last" category="not 98" search:person_image="not IS_EMPTY"}
+
+
+
+
+
+	<div class="block_image">
+		<a href="/client/{url_title}" class="" title="{person_name_first} {person_name_last}">
+				{exp:ce_img:single src="{field_id_131}" class="image_info shadow" title="{title}" width="140" height="140"  quality="100" crop="yes|center,{field_id_132}|0,0|smart_scale" alt="{title}"}
+				
+			<br />
+			<h4 style="margin-top: 4px;font-size: 11px;">{title}</h4>
+		</a>
+	</div>
+
+
+
+
+{/exp:channel:entries}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<!--person_name_last-->
+					{!--
+					exp:channel:entries channel="clients" search:person_image="not IS_EMPTY" category="not 98" disable="category_fields|member_data" orderby="random" limit="180"}
+					<div class="block_image">
+						<a href="{comment_url_title_auto_path}" class="" title="{person_name_first} {person_name_last}">
+				
+				
+								{exp:ce_img:single src="{person_image}" class="image_info shadow" title="{title}" width="140" height="140"  quality="100" crop="yes|center,{image_position}|0,0|smart_scale" alt="{title}" s}
+							<br />
+				
+				
+							<h4 style="margin-top: 4px;font-size: 11px;">{title}</h4>
+						</a>
+					</div>
+					{/exp:channel:entries --}
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</div>	
+				
+				
+				
+			</div><!-- /span6 -->		
+
+		{embed="global/_footer"}
+
+<!-- these close the footer 	-->
+	</div><!-- /row -->
+</div><!-- /container -->
+<!-- /these close the footer 	-->
+</div><!-- /page_wrapper -->
+ {/if}
+
+{embed="global/_page_bottom"}

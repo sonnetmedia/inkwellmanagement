@@ -1,0 +1,154 @@
+	{embed="global/_page_top" page_title="Clients" body_id="{segment_1}" meta="author"}
+
+{embed="clients/_top_section"}
+
+<!-- these open the footer 	-->
+<div class="page_wrapper">
+<div class="container">
+
+	{embed="clients/_client_list_text" key="value"}
+
+	<div class="row">
+<!-- /these open the footer 	-->
+
+
+<div class="span12 .columns-{segment_1}">
+
+{exp:channel:entries channel="clients" limit="1" disable="categories|category_fields|member_data" orderby="person_name_last" sort="asc" require_entry="yes"}
+
+<div class="span3 sidebar">
+
+				<a href="{comment_url_title_auto_path}" class="portrait_flow" title="{title}">
+					{exp:ce_img:single src="{person_image}" class="image_info shadow" title="{title}" max_width="235"  quality="100" crop="yes|center,{image_position}|0,0|smart_scale" alt="{title}" style="margin-top:3px;max-width:100%;"}
+					<br />
+				</a>
+		
+				
+				
+
+{if person_links}
+	<ul class="sidebar_list" style="list-style-type: none;margin: 20px 0 20px 0;">
+		{person_links}
+		{if field_row_count =='1'}<h4>Links</h4>{/if}
+		<li><a href="{link}">&raquo; {link_description}</a></li>
+		{/person_links}
+	</ul>
+{/if}
+
+				
+{exp:playa:parents channel="news"  orderby="date" sort="desc"}
+	{if count =='1'}<h4 style="margin-top: 1em;">News</h4>{/if}
+<!--	<h4 class="small"><a href="{comment_url_title_auto_path}">{if article_video_embed}<img src="/images/global/video_list_icon.gif" height="12" width="11"/> {/if}{title}</a></h4>-->
+
+<h4 class="small">{title}</h4>
+{/exp:playa:parents}
+
+				
+				
+
+</div>
+
+<div class="span7 offset1">
+<h2 style="margin-top: 0;">{title}</h2>
+{if person_bio}
+{person_bio}
+<hr />
+{/if}
+{exp:playa:parents channel="books" orderby="date" sort="desc" show_future_entries="yes"}
+{if count =='100'}Books:<br />{/if}
+<a href="{comment_url_title_auto_path}">	
+	<div class="pull-left cover_flow" style="width: 134px; height: 280px;margin-right:20px;">
+		{!-- leave the div in place --}
+		<div style="margin-bottom: 10px;">{exp:ce_img:single src="{cover_image}" width="134" crop="yes|smart_scale" class="shadow cover_image" alt="{title}" title="{title}"}<br /><br /><strong><a href="{comment_url_title_auto_path}">{title}</a></strong>
+		</div>
+		<!--<p class="caption margin_none small">{title}</p>-->
+	</div>
+</a>
+
+
+
+{/exp:playa:parents}
+
+
+
+{exp:playa:parents channel="blog"  orderby="date" sort="desc"}
+	{if count =='1'}<hr class="w100" /><h4 style="margin-top: 1em;">Related Videos</h4>{/if}
+
+	<div id="videosTK" style="width: 210px;float: left;margin-right:10px ;padding-bottom:20px;">
+	
+		<a href="{comment_url_title_auto_path}" id="{url_title_path}" title="{title}">
+			{exp:antenna url='{video_link}' cache_minutes="120"}<img src="{video_thumbnail}" width="210" />{/exp:antenna}
+		</a>
+
+		<p class="small strong" >{title}<br />{!-- article_description --}</p>
+			<!--				<p class="small">
+			{exp:playa:children channel="clients"  orderby="date" sort="desc" backspace="2"}
+			{if count =='1'}Related Client: {/if}
+			<a href="{comment_url_title_auto_path}">{title}</a>, {/exp:playa:children}
+			</p><!-- need this bar if using columns |--*>-->
+	</div>
+
+
+{/exp:playa:parents}
+<style type="text/css">
+.cycle-slideshow { width: 100%;height: 750px;}
+.cycle-slideshow img { width: 100%; height: auto }
+</style>
+<div id="custom-caption" class="center"></div>
+<div class="cycle-slideshow" 
+	data-cycle-fx="scrollHorz"
+    data-cycle-pause-on-hover="true"
+    data-cycle-speed="200"
+    data-cycle-caption="#custom-caption"
+    data-cycle-caption-template="{{cycleTitle}}"
+    >
+		{image_gallery}
+			{exp:ce_img:single src="{image_gallery:gallery_image}" crop="no" max="980" data-cycle-title="{image_gallery:gallery_caption}" class="shadow" alt="{title}" title="{image_gallery:gallery_caption}"}
+			<div class="cycle-caption"></div>
+		{/image_gallery}
+</div>
+
+<hr />
+	
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+{exp:bbr_prevnext_entry current_url_title="{url_title}" channel_id="2" orderby="person_name_last" sort="asc" return_fields="url_title|title" cycle="yes" debug_mode="on" status="open"}
+<div class="row clearfix" style="margin-top:4em ;"><!-- /prev next navigation -->
+<hr class="w100"/>
+	<div class="span2">
+			<a href="{prev_url_title}" class="btn btn-mini inline" href="#"><i class="icon-chevron-left"></i> Prev: {prev_title}</a>
+	</div>
+
+	<div class="span2 offset8 columns">
+			<a href="{next_url_title}" class="btn btn-mini inline text-right" href="#">Next: {next_title} <i class="icon-chevron-right"></i></a>
+	</div>
+</div><!-- /row -->
+
+{/exp:bbr_prevnext_entry}
+
+
+
+{/exp:channel:entries}		
+
+
+
+
+</div><!-- /container -->
+</div><!-- /page_wrapper -->
+
+
+{embed="global/_page_bottom"}

@@ -1,0 +1,97 @@
+<div class="span12">
+
+			{exp:channel:entries channel="news" limit="1" offset="" disable="categories|category_fields|custom_fields|member_data|pagination" orderby="date" sort="desc"}
+
+			{if count == '1'}
+				<a href="/videos/"><h2  style="margin-bottom: 9px;">Hot News</h2></a>
+			{/if}				
+
+<ul class="inline-list" style="margin: 0;">News about {exp:playa:children field="article_related_author" backspace="6"} <li><a href="{path=client/{url_title}}">{title}</a></li>, and {/exp:playa:children}</ul>				
+
+				<h3 style="color: #777;">{title}</h3><a href=""></a>
+					
+				
+			<hr />			
+			{/exp:channel:entries}
+
+			
+
+			
+			
+			
+
+</div>
+<div class="span6">
+		{!-- inline margin bottom because line height not obeying with content below. both this and the connect heading need it --}
+			<a href="/videos/"><h2  style="margin-bottom: 9px;">Watch Videos</h2></a>	
+	
+
+			{exp:channel:entries channel="blog" limit="6" disable="categories|category_fields|member_data|pagination" orderby="date" sort="desc" dynamic="no"}
+						<div id="">
+				<div id="videos" style="width: 210px;float: left;margin-right:10px ;padding-bottom:20px;">
+				
+					<a href="{comment_url_title_auto_path}" id="{url_title_path}" title="{title}">
+						{exp:antenna url='{video_link}' cache_minutes="120"}<img src="{video_thumbnail}" width="210" />{/exp:antenna}
+					</a>
+			
+					<p class="small strong" >{title}<br />{!-- article_description --}</p>
+						<!--				<p class="small">
+						{exp:playa:children channel="clients"  orderby="date" sort="desc" backspace="2"}
+						{if count =='1'}Related Client: {/if}
+						<a href="{comment_url_title_auto_path}">{title}</a>, {/exp:playa:children}
+						</p><!-- need this bar if using columns |--*>-->
+				</div>
+			</div>
+			{/exp:channel:entries}
+
+			<p class="clearfix" style="clear: both;margin-top:2em ;"><a href="/videos/">see all videos &raquo;</a></p>
+	
+	
+	
+		</div><!-- /five columns -->
+	
+<style>
+.twitter-follow-button{
+margin-bottom: -12px;
+}
+</style>
+	
+	
+	
+		<div class="span5 offset1">
+	
+			<h2 style="margin-left: -20px;">Connect with Us</h2>
+	
+	
+	<div class="row w100" style="width: 100%;margin-bottom: 2em;">
+	<a href="https://twitter.com/{twitter_username}" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @{twitter_username}</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	
+	
+			<a href="http://inkwellmanagement.tumblr.com/" class="social_button" ><img src="/static/images/icons/tumblr.png" alt="" /></a>
+				<a href="http://www.facebook.com/InkWellManagement" class="social_button"><img src="/static/images/icons/facebook.png" alt="" /></a>
+				<a href="http://twitter.com/{twitter_username}" class="social_button"><img src="/static/images/icons/twitter.png" alt="" /></a>
+	</div>
+	
+	
+	<div class="row">
+	<hr class="visible-phone" />
+	
+		<div id="tweets">
+			{exp:tgl_twitter twitter_refresh="1" screen_name="{twitter_username}" limit="12" use_stale_cache="yes" create_links="user_mentions|hashtags|urls"}
+			
+			<div class="tweet">   
+				{text}<br />
+			<!-- <span class="small light">{status_relative_date} ago</span> -->
+			</div>
+			{/exp:tgl_twitter} 
+		</div><!-- /tweets -->
+	
+	</div><!--	/row -->
+	
+
+	
+	
+	
+	</div><!-- columns -->
+	
