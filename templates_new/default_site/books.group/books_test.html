@@ -1,0 +1,27 @@
+{embed="global/_page_top" page_title="Books" body_id="{segment_1}" meta="book"}
+<h1>titles and cover images only</h1>
+
+
+
+
+
+{exp:channel:entries channel="books" limit="100" disable="categories|category_fields|member_data" pagination="both" limit="100"}
+<h1><em>{title}</em></h1>
+
+{editions}
+<div><img src="{cover_image}" alt="{title}" width="100" /></div>
+
+{/editions}
+
+{paginate}
+       <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+   {/paginate}
+
+{/exp:channel:entries}
+
+<!-- these close the footer   -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+  <!-- /these close the footer  -->
+</div><!-- /page_wrapper -->
+{embed="global/_page_bottom"}

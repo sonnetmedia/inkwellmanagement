@@ -1,0 +1,53 @@
+{embed="global/_page_top" page_title="Videos" body_id="{segment_1}" meta="company"}
+<div class="container">
+  <div class="row" style="padding: 3em 0;">
+    <div class="span10">
+      <h1>Latest Books</h1>
+    </div>
+  </div><!--  /row -->
+</div><!-- /container -->
+
+
+<div class="page_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        {exp:channel:entries channel="books" limit="53" disable="categories|category_fields|member_data|pagination" orderby="date" sort="desc"}
+          <a href="{comment_url_title_auto_path}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}" style="margin-right:18px;float:left;margin-bottom:18px;"}
+</a>
+        {/exp:channel:entries}
+      </div>
+
+      <div class="span4">
+
+        <div id="videos">
+            <h5>Latest News</h5>
+          {exp:channel:entries channel="news" disable="category_fields|member_data|pagination" limit="3" dynamic="no" orderby="date" sort="desc"}
+
+
+
+            <h4{if count > '1'} style="margin-top:2em;"{/if}><a href="{comment_url_title_auto_path}">{title}</a></h4>
+                <ul class="inline-list" style="margin: 0;">
+                {entry_date format="%F %d, %Y"}
+                </ul>
+
+
+
+
+
+          {/exp:channel:entries}
+
+        </div>
+
+    </div>
+
+
+
+
+
+ {embed="global/_footer"}
+  </div>
+</div><!-- /container -->
+</div><!-- /page_wrapper -->
+
+{embed="global/_page_bottom"}

@@ -1,0 +1,87 @@
+{embed="global/_page_top" page_title="Books" body_id="{segment_1}" meta="book"}
+<div class="container">
+	<div class="row" style="padding: 3em 0;">
+		{exp:channel:entries channel="books" limit="1" require_entry="yes" disable="categories|category_fields|member_data|pagination" show_future_entries="yes"}
+			<div class="span9 offset2">
+				{exp:playa:parents channel="reviews" disable="categories|category_fields|member_data|pagination" limit="1" orderby="random" show_future_entries="yes"}
+					<div class="quotes">
+						<p class="quote_body" style="font-size:1.5em;">&ldquo;{quote}&rdquo;</p>
+						<p class="small">&mdash; {quote_info}{quote_who}{if reviewer_name AND reviewer_publication},{/if} {if quote_link}<a href="{link_to_source}"><em>{quote_pub}</em></a>{if:else}<em>{quote_pub}</em>{/if}{/quote_info}{exp:playa:children field="quote_related_book"} on <em>{title}</em>{/exp:playa:children}</p>
+					</div><!-- /quotes -->
+				{/exp:playa:parents}
+			</div>
+		{/exp:channel:entries}
+	</div><!--	/row -->
+</div><!-- /container -->
+<!-- these open the footer 	-->
+<div class="page_wrapper">
+	<div class="container">
+		<div class="row">
+<!-- /these open the footer 	-->
+			<div class="span12">
+				{exp:channel:entries channel="books" disable="category_fields|member_data|pagination" require_entry="yes" show_future_entries="yes"}
+				<div class="span3 columns">
+					<div style="margin-bottom: 10px;">{exp:ce_img:single src="{cover_image}" crop="yes|smart_scale" class="shadow" alt="{title}" title="{title}" style="100%"}</div>
+					{if description_short}<p class="tagline"><small>{description_short}</small></p>{/if}
+					{if isbn}<p class="strong small"><small>ISBN: {isbn}</small></p>{/if}
+					<br />
+						<!--<h2>Buying Options</h2>-->
+					{if {entry_date format="%U"} >	 {current_time format="%U"}}
+				<h4 class="strong small">Pub Date: {entry_date format="%F %d %Y"}</h4>
+					<a onclick="return false;" class="btn btn-primary show_all">Preorder the book</a>
+				{if:else}
+			<a onclick="return false;" class="btn btn-primary show_all">Buy the book</a>
+			{/if}
+	<!--	END MODAL -->
+	</div>
+
+	<style>
+	.m0{
+		line-height: 100%;
+	}
+	</style>
+
+	<div class="span7 offset1">
+		<h1 class="title m0" id="{url_title}">
+			<em>{exp:low_widont}{title}{/exp:low_widont}</em>
+		</h1>
+		{if description_subtitle}
+			<h3 class="m0 subtitle">
+				{description_subtitle}
+			</h3>
+		{/if}
+		<br />
+		<h3 class="author" style="margin: 0;line-height: 100%;">
+			{exp:playa:children field="related_author" backspace="2"}<a href="{comment_url_title_auto_path}">by {title}</a>, {/exp:playa:children}
+		</h3><br />
+		<span style="font-size: 16px;">{description_synopsis}</span>
+			<div class="buying-options" style="display: none;">
+				<div id="buylist" style="margin-top: 40px;">
+					<ul>
+						<li class="amazon"><a target="_blank" href="http://www.amazon.com/gp/search?keywords={isbn}&index=books" onClick="javascript: pageTracker._trackPageview('/outgoing/Amazon.com');" title="{title}"></a></li>
+						<li class="bn"><a target="_blank" href="http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?EAN={isbn}" onClick="javascript: pageTracker._trackPageview('/outgoing/barnesandnoble.com');" title="{title}"></a></li>
+						<li class="indiebound"><a target="_blank" href="http://www.booksense.com/product/info.jsp?isbn={isbn}" onClick="javascript: pageTracker._trackPageview('/outgoing/booksense.com');" title="{title}"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	{exp:bbr_prevnext_entry current_url_title="{url_title}" channel_id="1" orderby="title" sort="asc" return_fields="url_title|title" cycle="yes" status="open"}
+		<div class="row clearfix" style="margin-top:4em ;"><!-- /prev next navigation -->
+			<hr class="w100"/>
+			<div class="span3">
+				<a href="{prev_url_title}" class="btn btn-mini inline" href="#"><i class="icon-chevron-left"></i> Prev: {prev_title}</a>
+			</div>
+			<div class="span3 columns pull-right">
+				<a href="{next_url_title}" class="btn inline btn-mini text-right" href="#">Next: {next_title} <i class="icon-chevron-right"></i></a>
+			</div>
+		</div><!-- /row -->
+	{/exp:bbr_prevnext_entry}
+{/exp:channel:entries}
+<!-- these close the footer 	-->
+		</div><!-- /row -->
+	</div><!-- /container -->
+	<!-- /these close the footer 	-->
+</div><!-- /page_wrapper -->
+{embed="global/_page_bottom"}
