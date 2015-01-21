@@ -1,0 +1,21 @@
+{if logged_in}
+{exp:channel:entries channel="books" disable="category_fields|member_data|categories" show_future_entries="yes" limit="500" order_by="entry_id" paginate="top"}
+
+<div style="width: 90px;height: 200px;float: left;margin: 10px;background-color: gray;">			
+
+	{if cover_image}
+	{exp:ce_img:single src="{cover_image}" crop="yes|smart_scale" class="shadow" alt="{title}" width="90"}<br />
+	{/if}
+<a href="http://inkwell.sonnetmedia.info/admin.php?S=0&D=cp&C=content_publish&M=entry_form&channel_id=1&entry_id={entry_id}" style="font-size:8px;">{title}</a>	
+	{if cover_image == ''}<span style="color:  red;">no cover image!</span>{/if}
+	
+</div>	
+
+{paginate}
+     <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+ {/paginate}
+
+
+{/exp:channel:entries}
+
+{/if}

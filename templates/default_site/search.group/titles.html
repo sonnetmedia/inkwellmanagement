@@ -1,0 +1,134 @@
+{embed="global/_page_top" page_title="Search" body_id="about" page_width="standard" meta="company"}
+
+<div class="container">	
+
+	<div id="row-topTK" class="sixteen columns row"> 
+	<h2>Search</h2>
+
+		<div class="two-thirds column alpha"> 			
+
+			<div class="box light">	
+			
+			
+		<h2>Search</h2>
+		
+	
+	<h4>Simple site Search<span style="font-size:12px;"> <a href="{path="search/forget_last_search"}">forget last search?</a></span></h4>
+					
+					
+	
+<form method="post" action="{path=search/results}">
+
+{exp:super_search:search {if segment_2 == "saved"}search_id="{segment_3}"{/if} highlight_keywords="b"}
+<p><label for="keywords">Keywords:</label><br />
+<input type="text" name="keywords" id="keywords" value="{super_search_keywords}" /><input type="submit" name="submit" value="Search" class="button" /></p>
+{/exp:super_search:search}
+
+</form>
+	
+					<hr />
+	
+					<h4>Search Books</h4>
+	
+					<form method="post" action="{path=search/article_results}">
+	
+					{exp:super_search:search {if segment_2 == "saved"}search_id="{segment_3}"{/if}}
+					<p><label for="keywords">Keywords:</label><br />
+						<input type="text" name="keywords" id="keywords" value="{super_search_keywords}" /></p>
+					<p><label for="author">Author:</label><br />
+						<select name="author">
+							<option value="">Any</option>
+						{exp:query sql="SELECT screen_name, username FROM exp_members WHERE group_id = '1' ORDER BY screen_name ASC LIMIT 10"}
+							<option value="{username}" {if super_search_author == "{username}"}selected="selected"{/if}>{screen_name}</option>
+						{/exp:query}
+						</select></p>
+					<p><label for="date-from">Date Range (between):</label><br />
+						<input type="text" name="date-from" id="date-from" value="{super_search_date-from}" class="datepicker range" />
+						<label for="date-to">to:</label> <input type="text" name="date-to" id="date-to" value="{super_search_date-to}" class="datepicker range" /></p>
+					<p><input type="submit" name="submit" value="Search!" class="button" /></p>
+					{/exp:super_search:search}
+	
+					</form>
+	
+					<hr />
+	
+					<h4>Search Products on this site:</h4>
+	
+					<form method="post" action="{path=search/product_results}">
+	
+					{exp:super_search:search {if segment_2 == "saved"}search_id="{segment_3}"{/if}}
+					<p><label for="title">Title:</label><br />
+						<input type="text" name="title" id="title" value="{super_search_title}" /></p>
+					<p style="clear:both;"><label for="description">Description:</label><br />
+						<div id="tip1_link" class="tooltip">Help?</div>
+						<input type="text" name="description" id="description" value="{super_search_description}" /></p>
+					<div class="codepack_warning" id="tip1" style="display:none;">NOTE: You'll need to either rename this field to one that exists on your site, or create a new field called "description" and set it to searchable for this field to work.</div>
+					<p style="clear:both;"><label for="category">Category:</label><br />
+						<div id="tip2_link" class="tooltip">Help?</div>
+						<select name="category">
+							<option value="">All</option>
+	
+						{exp:channel:categories channel="channel_1"}
+							<option value="{category_id}" {if super_search_category == "{category_id}"}selected="selected"{/if}>{category_name}</option>
+						{/exp:channel:categories}
+	
+	%/ee1%
+						{exp:weblog:categories weblog="default_site"}
+							<option value="{category_id}" {if super_search_category == "{category_id}"}selected="selected"{/if}>{category_name}</option>
+						{/exp:weblog:categories}
+	%/ee1%
+						</select></p>
+					<div class="codepack_warning" id="tip2" style="display:none;">NOTE: To see Categories in this list, categories must first exist on your site, and you'll need to specify the correct channel name in the template code.</div>
+					<p style="clear:both;"><label for="price-from">Price Range (between):</label><br />
+						<div id="tip3_link" class="tooltip">Help?</div>
+						<input type="text" name="price-from" id="price-from" value="{super_search_price-from}" class="range" />
+						<label for="price-to">to:</label> <input type="text" name="price-to" id="price-to" value="{super_search_price-to}" class="range" /></p>
+					<div class="codepack_warning" id="tip3" style="display:none;">NOTE: You'll need to either rename this field to one that exists on your site, or create a new field called "price" and set it to searchable for this field to work.
+						Additionally, to get range searching working, you need to modify this field to "Decimal" type with "Precision" set to "2" in the "Fields" tab of the Super Search CP area.</div>
+					<p><input type="submit" name="submit" value="Search!" class="button" /></p>
+					{/exp:super_search:search}
+	
+					</form>
+	
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+					
+			
+			
+			</div>
+
+		</div>			
+
+
+
+		<div class="one-third column omega"> 
+{embed="about/_sidebar"} 
+
+			{embed="global/_box_whats_new" entry_limit="10"}
+		
+		</div>
+
+
+	</div> {!-- END top row --}
+
+	{!--
+	<div id="row-two" class="sixteen columns row">
+
+		{embed="books/_books_new" embed_id="new_books_wide"} 			
+
+	</div> <!-- END row-two -->
+--}
+
+</div><!-- container --> 
+
+{embed="global/_page_bottom"}

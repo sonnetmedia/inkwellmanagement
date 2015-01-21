@@ -1,0 +1,59 @@
+    <div class="row">
+      <div class="span12">
+        <div class="search_list all_entries" style="{if segment_3 != 'byalpha'}display:none;{/if}">
+<p>click on a letter to filter by title</p>
+<ul class="inline border-bottom">
+<li><a href="/books/latest/byalpha/a">a</a></li>
+<li><a href="/books/latest/byalpha/b">b</a></li>
+<li><a href="/books/latest/byalpha/c">c</a></li>
+<li><a href="/books/latest/byalpha/d">d</a></li>
+<li><a href="/books/latest/byalpha/e">e</a></li>
+<li><a href="/books/latest/byalpha/f">f</a></li>
+<li><a href="/books/latest/byalpha/g">g</a></li>
+<li><a href="/books/latest/byalpha/h">h</a></li>
+<li><a href="/books/latest/byalpha/i">i</a></li>
+<li><a href="/books/latest/byalpha/j">j</a></li>
+<li><a href="/books/latest/byalpha/k">k</a></li>
+<li><a href="/books/latest/byalpha/l">l</a></li>
+<li><a href="/books/latest/byalpha/m">m</a></li>
+<li><a href="/books/latest/byalpha/n">n</a></li>
+<li><a href="/books/latest/byalpha/o">o</a></li>
+<li><a href="/books/latest/byalpha/p">p</a></li>
+<li><a href="/books/latest/byalpha/q">q</a></li>
+<li><a href="/books/latest/byalpha/r">r</a></li>
+<li><a href="/books/latest/byalpha/s">s</a></li>
+<li><a href="/books/latest/byalpha/t">t</a></li>
+<li><a href="/books/latest/byalpha/u">u</a></li>
+<li><a href="/books/latest/byalpha/v">v</a></li>
+<li><a href="/books/latest/byalpha/w">w</a></li>
+<li><a href="/books/latest/byalpha/x">x</a></li>
+<li><a href="/books/latest/byalpha/y">y</a></li>
+<li><a href="/books/latest/byalpha/z">z</a></li>
+</ul>
+                
+<div class="search_list_content" style="width: 100%;margin-bottom: 3em;">
+{exp:query sql="SELECT field_id_3, url_title, title
+FROM exp_channel_titles LEFT JOIN exp_channel_data 
+ON exp_channel_titles.entry_id = exp_channel_data.entry_id
+WHERE exp_channel_titles.channel_id = '1'
+AND status = 'open'
+AND title LIKE '{segment_4}%'
+ORDER BY title 
+limit 100000"}
+<a href="/books/{url_title}" id="{title}">
+<div class="tabular_data_books">{title}</div></a>{/exp:query}</div>
+
+
+
+        </div>
+      </div>  
+    </div>
+
+<style type="text/css">
+  .tabular_data_books{
+padding: .5em .25em;
+    float: left;width: 31%;   
+  }
+
+</style>
+{!-- bp added AND field_id_15 != ''  to query --}

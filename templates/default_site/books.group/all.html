@@ -1,0 +1,10 @@
+
+{exp:channel:entries channel="books" limit="1000" disable="category_fields|member_data|pagination" show_future_entries="yes" search:cover_image="IS_EMPTY"}
+{if count=="1"}<h1>{total_results}</h1>{/if}
+<div style="border-bottom: 1px solid #333;margin-bottom: 20px;">
+<h5><a href="/admin.php?S=0&D=cp&C=content_publish&M=entry_form&channel_id=2&entry_id={entry_id}" target="_blank">{title}</a> {exp:playa:children field="related_author" backspace="2"}by {title}, {/exp:playa:children}</h5>
+{cover_image}
+</div>
+{/exp:channel:entries}				
+
+	

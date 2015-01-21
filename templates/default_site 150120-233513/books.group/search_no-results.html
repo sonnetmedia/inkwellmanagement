@@ -1,0 +1,25 @@
+{embed="global/_page_top" page_title="Home" body_id="clients" meta="company"}
+{embed="books/_top_section"}
+<div class="page_wrapper"><!-- these open the footer 	-->
+	<div class="container"><!-- these open the footer 	-->
+		{embed="books/_books_list_text" key="value"}
+		<div class="row" style="{if segment_2 == 'alpha'}display:none;{/if}">
+<!-- /these open the footer 	-->
+			<div class="span12">				
+				<div class="short_list" id="images">				
+				<h2>Your Search Returned No Results. Please Try Again.</h2><br /><br /><br />
+				
+				{exp:channel:entries channel="books" sticky="yes" limit="23" disable="category_fields|member_data|pagination"}
+                <a href="{comment_url_title_auto_path}">
+                    {exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}" style="margin-right:18px;float:left;margin-bottom:18px;"}                  
+                </a>
+				{/exp:channel:entries}					
+				</div>					
+			</div><!-- /span6 -->		
+		{embed="global/_footer"}
+<!-- these close the footer 	-->
+	</div><!-- /row -->
+</div><!-- /container -->
+<!-- /these close the footer 	-->
+</div><!-- /page_wrapper -->
+{embed="global/_page_bottom"}

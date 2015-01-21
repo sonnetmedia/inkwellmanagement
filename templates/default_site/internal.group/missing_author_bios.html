@@ -1,0 +1,32 @@
+<h3><a href="/internal/">Main Internal Page</a></h3>
+Clients: List of clients with no bios. Click link to go to edit page.
+
+<hr />
+
+{exp:channel:entries channel="clients" limit="100" search:person_bio="IS_EMPTY" disable="categories|category_fields|member_data" orderby="person_name_last" paginate="both"}
+
+<div>
+
+<h3><a href="/admin.php?S=0&D=cp&C=content_publish&M=entry_form&channel_id=2&entry_id={entry_id}" class="portrait_flow" title="{title}">{title}: </a>
+
+	
+		{if person_bio}
+		
+		{if:else}No bio for this person!
+		{/if}
+	<br />
+	
+				
+</h3>
+
+
+<hr />
+{paginate}
+     <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+ {/paginate}
+ 
+</div>
+
+{/exp:channel:entries}	
+
+

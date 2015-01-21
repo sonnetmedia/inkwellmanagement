@@ -1,0 +1,82 @@
+{embed="global/_page_top" page_title="News" body_id="{segment_1}" meta="company"}
+
+
+
+	<div class="container">
+		<div class="row primary_canvas">
+		
+			<div class="span10">
+			
+					<h1>Latest News</h1>
+			
+			</div>	
+			
+			</div><!--	/row -->
+		</div><!-- /container -->
+	
+<div class="page_wrapper">	
+<div class="container">
+	<div class="row">
+		<div class="span7">
+					{exp:channel:entries channel="news" disable="category_fields|member_data|pagination" orderby="date" sort="desc"}
+		
+
+		
+						<h2{if count > '1'} style="margin-top:4em;"{/if}><a href="{comment_url_title_auto_path}">{title}</a></h2>
+								<ul class="inline-list" style="margin: 0;">
+								{entry_date format="%F %d, %Y"} | 
+								
+								News about {exp:playa:children field="article_related_author" backspace="6"} <li><a href="{path=client/{url_title}}">{title}</a></li>, and {/exp:playa:children}</ul>				
+											<hr style="border-bottom: 1px solid #ddd;"/>			
+						
+						
+						<p>
+						{article_description}
+						</p>
+						{article_text}						
+							
+					{if count == '1000'}						
+					<hr style="border-bottom: 1px solid #ddd;"/>			
+					{/if}
+					{/exp:channel:entries}
+
+		</div>
+		
+		
+		<div class="span4 offset1">
+
+<h5>Latest Videos</h5>
+
+
+					{exp:channel:entries channel="blog" limit="6" disable="categories|category_fields|member_data" orderby="date" sort="desc" dynamic="no" paginate="bottom"}
+				
+					<div class="videoTK" style="overflow: hidden;background-color: #f2f2f2;width: 140px;height: 215px;float: left;margin: 0px 10px 10px 0px;{if "{url_title}" == '{segment_2}'}display:none;{/if}">
+						<a href="{comment_url_title_auto_path}" id="{url_title_path}" title="{title}">
+							{exp:antenna url='{video_link}' cache_minutes="120" max_height="105"}<img src="{video_thumbnail}" width="140" style="height: 105px;max-height: 105px;" />{/exp:antenna}
+				
+							<p class="small" style="padding: 4px 12px;">{title}</p>
+						</a>
+				<!--		<p class="small">
+							{exp:playa:children channel="clients"  orderby="date" sort="desc" backspace="2"}
+								{if count =='1'}Related Client: {/if}
+							<a href="{comment_url_title_auto_path}">{title}</a>, {/exp:playa:children}
+						</p>-->
+					</div>						
+				
+				{/exp:channel:entries}
+
+				
+		
+		<a class="twitter-timeline" href="https://twitter.com/Inkwellmgmt" data-widget-id="245328987579092993">Tweets by @Inkwellmgmt</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+		</div>
+
+
+
+		{embed="global/_footer"}
+	</div><!-- /row -->
+</div><!-- /container -->
+</div><!-- /page_wrapper --> 
+
+{embed="global/_page_bottom"}

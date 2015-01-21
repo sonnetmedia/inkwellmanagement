@@ -1,0 +1,26 @@
+{!-- not currently using --}
+<div class="search_list_imagesTK" id="images" style="display: ;">
+{exp:query sql="
+SELECT field_id_3, title, field_id_131, field_id_132, url_title
+FROM exp_channel_titles LEFT JOIN exp_channel_data 
+ON exp_channel_titles.entry_id = exp_channel_data.entry_id
+WHERE exp_channel_titles.channel_id = '2'
+AND status = 'open'
+AND field_id_131 != ''
+AND field_id_15 != ''
+ORDER BY RAND() 
+limit 1000"
+}
+
+	<div class="block_image">
+		<a href="/client/{url_title}" class="" title="{person_name_first} {person_name_last}">
+				{exp:ce_img:single src="{field_id_131}" class="image_info shadow" title="{title}" width="140" height="140"  quality="10" crop="yes|center,{field_id_132}|0,0|smart_scale" alt="{title}"}
+				
+			<br />
+			<h4 style="margin-top: 4px;font-size: 11px;">{title}</h4>
+		</a>
+	</div>
+
+{/exp:query}
+</div>
+

@@ -1,0 +1,39 @@
+{embed="global/_page_top" page_title="Clients" body_id="clients" meta="company"}
+{embed="clients/_top_section"}
+<div class="page_wrapper"><!-- these open the footer 	-->
+	<div class="container"><!-- these open the footer 	-->
+		{embed="clients/_client_list_text" key="value"}
+		<div class="row" style="{if segment_2 == 'alpha'}display:none;{/if}">
+			<!-- /these open the footer 	-->
+			<div class="span12">
+				<div class="short_list" id="images">
+					{if segment_2}
+						{exp:channel:entries channel="clients" limit="18" disable="category_fields|member_data|pagination" orderby="random" search:person_image="not IS_EMPTY"}
+							<div class="block_image">
+								<a href="/client/{url_title}" class="" title="{person_name_first} {person_name_last}">
+										{exp:ce_img:single src="{field_id_131}" class="image_info shadow" title="{title}" width="140" height="140"  quality="100" crop="yes|center,{field_id_132}|0,0|smart_scale" alt="{title}"}
+									<br />
+									<h4 style="margin-top: 4px;font-size: 11px;">{title}</h4>
+								</a>
+							</div>
+						{/exp:channel:entries}
+					{if:else}
+						{exp:channel:entries channel="clients" limit="18" disable="category_fields|member_data|pagination" orderby="random" category="not 98" search:person_image="not IS_EMPTY"}
+							<div class="block_image">
+								<a href="/client/{url_title}" class="" title="{person_name_first} {person_name_last}">
+										{exp:ce_img:single src="{field_id_131}" class="image_info shadow" title="{title}" width="140" height="140"  quality="100" crop="yes|center,{field_id_132}|0,0|smart_scale" alt="{title}"}
+									<br />
+									<h4 style="margin-top: 4px;font-size: 11px;">{title}</h4>
+								</a>
+							</div>
+						{/exp:channel:entries}
+					{/if}
+				</div>
+			</div><!-- /span6 -->
+		{embed="global/_footer"}
+<!-- these close the footer 	-->
+	</div><!-- /row -->
+</div><!-- /container -->
+<!-- /these close the footer 	-->
+</div><!-- /page_wrapper -->
+{embed="global/_page_bottom"}

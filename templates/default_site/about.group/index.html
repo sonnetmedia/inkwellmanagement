@@ -1,0 +1,52 @@
+{embed="global/_page_top" page_title="About" body_id="about" meta="company"}
+<div class="container">
+	<div class="row" style="padding: 2em 0;">
+		{exp:channel:entries channel="static" url_title="about-us" disable="categories|category_fields|member_data|pagination"}		
+			<div class="span2 columns">
+				<h1>About</h1>
+			</div><!-- /span6 -->					
+			<div class="span10 span10 presentation_text">
+				{static_text}
+			</div>
+		{/exp:channel:entries}						
+	</div><!--	/row -->
+</div><!-- /container -->
+<!-- these open the footer 	-->
+<div class="page_wrapper">
+	<div class="container">
+		<div class="row">
+			<!-- /these open the footer 	-->
+			<h1>Our Staff</h1>
+			<div id="bio" class="span12">
+				{exp:channel:entries channel="staff" category="70" disable="categories|category_fields|member_data" orderby="person_name_last" sort="asc" limit="2000"}
+					<div class="bio">
+						<div>
+							<a href="{comment_url_title_auto_path}" class="" title="{title}">
+								<h4 style="margin-bottom: 4px;font-size: 18px;">{title}</h4>
+								{exp:ce_img:single src="{person_image}" class="image_info shadow" title="{title}" width="242"  height="242" quality="97" crop="yes|center,{image_position}|0,0|smart_scale" alt="{title}" style="margin-bottom:10px;"}
+								<br />
+							</a>
+							<p>{person_description_text}</p>
+						</div>
+					</div>
+				{/exp:channel:entries}
+				{exp:channel:entries channel="staff" category="not 70" disable="categories|category_fields|member_data" orderby="person_name_last" sort="asc" limit="2000"}
+					<div class="bio">
+						<div>	
+							<a href="{comment_url_title_auto_path}" class="" title="{title}">
+								<h4 style="margin-bottom: 4px;font-size: 18px;">{title}</h4>
+								{exp:ce_img:single src="{person_image}" class="image_info shadow" title="{title}" width="242"  height="242" quality="97" crop="yes|center,{image_position}|0,0|smart_scale" alt="{title}" style="margin-bottom:10px;"}
+								<br />
+							</a>
+							<p>{person_description_text}</p>
+						</div>
+					</div>
+				{/exp:channel:entries}
+			</div>
+{embed="global/_footer"}
+		<!-- these close the footer 	-->
+		</div><!-- /row -->
+	</div><!-- /container -->
+		<!-- /these close the footer 	-->
+</div><!-- /page_wrapper-->
+{embed="global/_page_bottom"}

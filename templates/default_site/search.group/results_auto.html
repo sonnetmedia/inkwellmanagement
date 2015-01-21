@@ -1,0 +1,116 @@
+everything for the filter effect
+
+
+
+
+
+					<input class="show_extended_banner" name="keywords" type="search" id="filter" onfocus="(value='')" value="Start Searching Authors & Titles" size="40" />
+
+
+
+
+
+<script>
+//maybe this
+
+function loadPage(url){
+	$('#.search_results').append('<div id="progress">Loading...</div>');
+
+
+	if (url == undefined){
+		$('#banner_extended').load('/search/results_auto/');
+
+		} else{
+		$('#container').load(url +'#content');
+				}
+	}
+	
+	function hijackLinks(){
+	
+	$('#header a').click(function(e){
+										e.preventDefault();
+										loadPage (e.target.href);	
+	
+	});
+	
+	
+	$('#progress').remove();
+	
+	
+	
+	}
+
+
+</script>
+
+
+
+<script>
+
+
+
+
+$(document).ready(function(){
+
+
+
+$('.show_extended_banner').keyup(function(){$("#banner_extended, .hide_extended").slideDown(600);});
+
+
+
+
+    $("#filter").keypress(function(){
+    
+    
+        // Retrieve the input field text and reset the count to zero
+        var filter = $(this).val(), count = 0;
+ 
+        // Loop through the content list
+        $(".search_list li").each(function(){
+        
+     
+        
+ 
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+ 
+            // Show the list item if the phrase matches and increase the count by 1
+            } else {
+                $(this).show();
+                count++;
+            }
+        });
+ 
+        // Update the count
+        var numberItems = count;
+        $("#filter-count").text("Search Results = "+count);
+    
+       
+    
+    });
+    
+    
+    
+});
+
+</script>
+
+
+
+
+
+
+
+
+<div id="search_results">
+<h2 class="show_extended" id="filter-count"></h2>						
+<ol class="search_list">
+{exp:query sql="SELECT title, comment_url, url_title FROM exp_channel_titles LEFT JOIN exp_channels USING (channel_id) WHERE (channel_id = '1' OR channel_id ='2')"}
+<li><a href="{comment_url}{url_title}">{title}</a></li>
+{/exp:query}
+</ol>
+</div>
+
+
+

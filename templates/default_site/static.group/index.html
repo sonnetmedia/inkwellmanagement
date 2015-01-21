@@ -1,0 +1,24 @@
+{embed="global/_page_top" body_id="{segment_1}" meta="company"}
+	<div class="container">
+		<div class="row primary_canvas">		
+			<div class="span10">
+				{exp:channel:entries channel="static" disable="categories|category_fields|member_data|pagination"}
+					<h1>{title}</h1>
+				{/exp:channel:entries}			
+			</div>	
+		</div><!--	/row -->
+	</div><!-- /container -->
+<div class="page_wrapper">	
+<div class="container">
+	<div class="row">
+		<div class="span12 copy">
+			{exp:channel:entries channel="static" disable="categories|category_fields|member_data|pagination"}
+				{static_text}
+			{/exp:channel:entries}			
+		</div>
+		{embed="global/_footer"}
+	</div><!-- /row -->
+</div><!-- /container -->
+</div><!-- /page_wrapper --> 
+
+{embed="global/_page_bottom"}
