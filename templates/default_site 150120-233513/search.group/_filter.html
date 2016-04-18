@@ -1,9 +1,0 @@
-<form method="post" action="{path=search/results}">
-
-{exp:super_search:search {if segment_2 == "saved"}search_id="{segment_3}"{/if} highlight_keywords="b"}
-<p><label for="keywords">Keywords:</label>
-<input type="text" name="keywords" id="keywords" onfocus="(value='')" value="Enter Search Term | Hit Return" /><input type="hidden" name="submit" value="Search" class="button" /></p>
-{/exp:super_search:search}
-
-</form>
-

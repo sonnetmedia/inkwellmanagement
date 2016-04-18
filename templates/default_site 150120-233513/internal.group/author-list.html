@@ -1,7 +1,0 @@
-{if logged_in}
-{exp:ajw_export 
-sql="SELECT title FROM exp_channel_titles WHERE channel_id = '2' ORDER BY title asc" 
-format="csv" 
-delimter=":"
-filename="inkwell-author_list.csv"
-}{/if}
