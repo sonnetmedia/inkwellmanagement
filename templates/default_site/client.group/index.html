@@ -21,10 +21,10 @@
 								{/person_links}
 							</ul>
 						{/if}
-						{exp:playa:parents channel="news"  orderby="date" sort="desc"}
+						{exp:playa:parents channel="news" orderby="date" sort="desc"}
 							{if count =='1'}<h4 style="margin-top: 1em;">News</h4>{/if}
 							<!--	<h4 class="small"><a href="{comment_url_title_auto_path}">{if article_video_embed}<img src="/images/global/video_list_icon.gif" height="12" width="11"/> {/if}{title}</a></h4>-->
-							<h4 class="small">{title}</h4>
+							<h4 class="small"><a href="{path={channel_short_name}/{url_title}}">{title}</a></h4>
 						{/exp:playa:parents}
 						<div id="adv-custom-pager" class="center external"></div>{!--  SLIDESHOW THUMBNAILS --}
 					</div>

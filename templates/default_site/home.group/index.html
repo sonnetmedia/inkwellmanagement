@@ -21,17 +21,6 @@
 
 <div class="container">
   <div class="row primary_canvas">
-    <div class="span6">
-      {exp:channel:entries dynamic="no" url_title="mission-statement" channel="static" disable="categories|category_fields|member_data|pagination"}
-        <div class="mission_statment" style="margin-top: ;">
-          {static_text}
-        </div>
-      {/exp:channel:entries}
-      <div class="visible-phone">
-        <h2><a onclick="return false;" class="show_all">View Map</a></h2>
-        <div class="hide_text" style="display:none ;">{google_map}</div>
-      </div>
-    </div>
 
 <style type="text/css">
 img.shadow {
@@ -39,44 +28,26 @@ img.shadow {
 }
 </style>
     <div class="span6">
-      <div id="slidedeck_frame">
-              <div class="slideshow cycle-slideshow" data-cycle-fx=scrollVert
-        data-cycle-reverse=true
-        data-cycle-timeout=0
-        data-cycle-speed=2000
-        data-index=1>
-          {exp:channel:entries channel="books" limit="12" offset="0" disable="categories|category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes" start_on="<?php echo $start_time; ?>" stop_before="<?php echo $end_time; ?>"}
-
-              {exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}
+      <div class="row">
+          {exp:channel:entries channel="books" category="102" limit="3" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
+            <div class="span2">
+                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}</a>
+            </div>
           {/exp:channel:entries}
-        </div>
-            <div class="slideshow_two  cycle-slideshow" data-cycle-fx=scrollVert
-        data-cycle-timeout=0
-        data-cycle-speed=2000
-        data-index=2>
-          {exp:channel:entries channel="books" limit="12" offset="12" disable="categories|category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes" start_on="<?php echo $start_time; ?>" stop_before="<?php echo $end_time; ?>"}
-              {exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}
-          {/exp:channel:entries}
-        </div>
-            <div class="slideshow_three visible-desktop  cycle-slideshow" data-cycle-fx=scrollVert
-        data-cycle-timeout=0
-        data-cycle-reverse=true
-        data-cycle-speed=2000
-        data-index=4
->
-          {exp:channel:entries channel="books" limit="12" offset="24" disable="categories|category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes" start_on="<?php echo $start_time; ?>" stop_before="<?php echo $end_time; ?>"}
-
-
-            {!-- leave the div in place --}
-              {exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}
-
-
-          {/exp:channel:entries}
-        </div>
       </div>
     </div><!-- /span6 columns -->
-  </div><!--  /row -->
-</div>
+
+    <div class="span6">
+      <div class="row">
+          {exp:channel:entries channel="books" limit="3" category="not 102" disable="category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes" start_on="<?php echo $start_time; ?>" stop_before="<?php echo $end_time; ?>"}
+            <div class="span2">
+              <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}</a>
+            </div>
+          {/exp:channel:entries}
+      </div>
+    </div><!-- /span6 columns -->
+    </div><!--  /row -->
+  </div>
 
 
 <div class="page_wrapper">
@@ -86,7 +57,7 @@ img.shadow {
 
 
     <div class="span6">
-<h2>Latest News</h2>
+<h2>Latest</h2>
 {exp:channel:entries channel="news" limit="3" offset="" disable="category_fields|member_data|pagination" orderby="date" sort="desc"}
 <h3 style="margin-top:1.5em;margin-bottom:.5em;">
   <a href="{comment_url_title_auto_path}" id="{url_title_path}" title="{title}">

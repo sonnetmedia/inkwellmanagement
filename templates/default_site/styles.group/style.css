@@ -154,10 +154,10 @@ body {
 /* Artfully Masterminded by ZURB */
 /* --------------------------------------------------
 	:: Grid
-	
+
 	This is the mobile-friendly, responsive grid that
 	lets Foundation work much of its magic.
-	
+
 	-------------------------------------------------- */
 .container {
   padding: 0 40px;
@@ -427,12 +427,12 @@ img {
 }
 /*	--------------------------------------------------
 	:: Block grids
-	
+
 	These are 2-up, 3-up, 4-up and 5-up ULs, suited
 	for repeating blocks of content. Add 'mobile' to
 	them to switch them just like the layout grid
 	(one item per line) on phones
-	
+
 	For IE7/8 compatibility block-grid items need to be
 	the same height. You can optionally uncomment the
 	lines below to support arbitrary height, but know
@@ -3423,7 +3423,7 @@ img {
     width: 768px;
   }
 }
-/* -------------------------------------------------- 
+/* --------------------------------------------------
 	:: Mobile Visibility Affordances
 ---------------------------------------------------*/
 .show-on-phones {
@@ -3566,21 +3566,21 @@ table.hide-on-tablets {
     width: 100%;
     height: 28px;
     /* Make inputs at least the height of their button counterpart */
-  
+
     /* Makes inputs behave like true block-level elements */
-  
+
     -webkit-box-sizing: border-box;
     /* Older Webkit */
-  
+
     -moz-box-sizing: border-box;
     /* Older FF */
-  
+
     -ms-box-sizing: border-box;
     /* IE8 */
-  
+
     box-sizing: border-box;
     /* CSS3 spec*/
-  
+
   }
   .input-prepend input[class*="span"],
   .input-append input[class*="span"] {
@@ -3633,7 +3633,7 @@ table.hide-on-tablets {
   }
 }
 @media (min-width: 768px) and (max-width: 980px) {
-  
+
 }
 @media (max-width: 959px) screen and (orientation: landscape) {
   /* Landscape styles */
@@ -3734,5 +3734,5 @@ table.hide-on-tablets {
   }
 }
 @media (min-width: 1200px) {
-  
+
 }
