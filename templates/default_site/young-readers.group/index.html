@@ -1,0 +1,43 @@
+{embed="global/_page_top" page_title="Young Readers" body_id="young-readers" meta="company"}
+
+<div class="container">
+  <div class="row primary_canvas">
+
+<style type="text/css">
+img.shadow {
+  background: none;
+}
+</style>
+    <div class="span6">
+      <div class="row">
+          {exp:channel:entries channel="books" category="102|87" limit="3" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
+            <div class="span2">
+                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}</a>
+            </div>
+          {/exp:channel:entries}
+      </div>
+    </div><!-- /span6 columns -->
+
+    <div class="span6">
+      <div class="row">
+          {exp:channel:entries channel="books" limit="3" category="87" disable="category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
+            <div class="span2">
+              <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}</a>
+            </div>
+          {/exp:channel:entries}
+      </div>
+    </div><!-- /span6 columns -->
+    </div><!--  /row -->
+  </div>
+
+{if logged_in_group_id == '100'}
+  <?php
+ echo('START TIME: ');
+ echo($start_time);
+ echo('<br /> END TIME: ');
+ echo($end_time);
+  ?>
+ {/if}
+
+
+{embed="global/_page_bottom"}
