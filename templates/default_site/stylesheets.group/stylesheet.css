@@ -3291,7 +3291,7 @@ body {
 }
 footer#content-info,
 .push {
-  height: 3em;
+  height: auto;
 }
 footer#content-info {
   padding: 1em 0;
@@ -3538,13 +3538,16 @@ body#about .navbar .row {
 }
 footer {
   padding-top: 1em ;
-  color: #f2f1ea;
+  color: #444;
 }
 footer a {
-  color: #f0efe6;
+  color: #444;
 }
 footer a:hover {
-  color: #ffffff;
+  color: #666;
+}
+footer p {
+  margin-bottom: 0;
 }
 .footer {
   padding: 3em 1em;
@@ -3700,8 +3703,7 @@ a:hover .tabular_data {
   width: 16%;
 }
 .footer-style {
-  background-color: #716e68;
-  position: ;
+  background-color: #e8e8e8;
   bottom: 0;
   width: 100%;
   z-index: 999999;
