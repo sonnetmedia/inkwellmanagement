@@ -165,8 +165,8 @@
               <li{if segment_1 ==''} class="active"{/if}><a accesskey="1" href="/">Home</a></li>
               <li{if segment_1 =='about'} class="active"{/if}><a href="/about/" accesskey="2">About</a></li>
               <li{if segment_1 =='clients'} class="active"{/if}><a accesskey="3" href="/clients/">Authors</a></li>
-              <li{if segment_3=='designers-illustrators'} class="active"{/if}><a href="/clients/category/designers-illustrators">Illustrators</a> </li>
-
+              <li{if segment_3 =='young-readers'} class="active"{/if}><a href="/clients/category/young-readers">Young Readers</a> </li>
+              <li{if segment_3=='designers-illustrators'} class="active"{/if}><a href="/clients/category/designers-illustrators">Illustrators</a></li>
               <li{if segment_1 =='rights-and-permissions'} class="active"{/if}><a accesskey="4" href="/rights-and-permissions/">Rights & Permissions</a></li>
               <li{if segment_1 =='contact'} class="active"{/if}><a href="/contact/" accesskey="5">Contact</a></li>
               <li{if segment_1 =='news'} class="active"{/if}><a href="/news/" accesskey="6">News</a></li>
@@ -191,18 +191,20 @@
           </div>
           <div class="span10">
             <div class="pull-right" style="margin-top: 5px;">
+            {embed="search/_form"}
               <a href="http://twitter.com/{twitter_username}" class="social_button"><img src="/static/images/icons/twitter.png" alt="" /></a>
               <a href="http://www.facebook.com/InkWellManagement" class="social_button"><img src="/static/images/icons/facebook.png" alt="" /></a>
               <a href="http://inkwellmanagement.tumblr.com/" class="social_button" ><img src="/static/images/icons/tumblr.png" alt="" /></a>
 
               <a href="http://instagram.com/inkwellmgmt" class="social_button"><img src="/static/images/icons/instagram.png" alt="" style="height: 24px;"/></a>
+              <a href="https://www.goodreads.com/user/show/58672419-inkwell-management" class="social_button"><img src="/static/images/icons/goodreads.png" alt="" style="height: 24px;"/></a>
             </div>
           <div class="span9 offset1" style="padding-bottom: 20px;">
             <nav class="pull-rightF">
               <ul class="nav nav-pills" style="margin-top: 12px;">
                 <!-- <li{if segment_1 ==''} class="active"{/if}><a href="/">Home</a></li> -->
                 <li{if segment_1 =='clients' AND segment_2 ==''} class="active"{/if}><a href="/clients/">Authors</a> </li>
-                <li{if segment_1 =='young-readers' AND segment_2 ==''} class="active"{/if}><a href="/young-readers/">Young Readers</a> </li>
+                <li{if segment_3 =='young-readers'} class="active"{/if}><a href="/clients/category/young-readers">Young Readers</a> </li>
                 <li{if segment_3=='designers-illustrators'} class="active"{/if}><a href="/clients/category/designers-illustrators">Illustrators</a> </li>
                 <li{if segment_1 =='about'} class="active"{/if}><a href="/about/" >Our Team</a></li>
                 <li{if segment_1 =='rights-and-permissions'} class="active"{/if}><a href="/rights-and-permissions/">Rights & Permissions</a></li>
