@@ -3478,9 +3478,6 @@ ul.inline li {
 ul.border-bottom {
   border-bottom: 1px solid #ddd;
 }
-.navbar .row {
-  background: url(/static/images/global/inkwell_png32_7c8e54.png) no-repeat left bottom;
-}
 body#home .navbar .row {
   background-position: left bottom;
 }
