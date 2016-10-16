@@ -3569,6 +3569,9 @@ td {
   -moz-box-shadow: 0px 3px 10px 0px #000000;
   box-shadow: 0px 3px 10px 0px #000000;
 }
+.first-row {
+  margin-bottom: 2rem;
+}
 .row_spaced {
   margin: 3em auto 2em;
 }

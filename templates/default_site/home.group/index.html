@@ -8,21 +8,21 @@ img.shadow {
   background: none;
 }
 </style>
-    <div class="span6">
+    <div class="span12 first-row">
       <div class="row">
-          {exp:channel:entries channel="books" category="102" limit="3" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
-            <div class="span2">
-                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}</a>
+          {exp:channel:entries channel="books" category="102" limit="4" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
+            <div class="span3">
+                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
             </div>
           {/exp:channel:entries}
       </div>
     </div><!-- /span6 columns -->
 
-    <div class="span6">
+    <div class="span12">
       <div class="row">
-          {exp:channel:entries channel="books" limit="3" category="not 102" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
-            <div class="span2">
-              <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="130" crop="yes|smart_scale" height="195" class="shadow" alt="{title}" title="{title}"}</a>
+          {exp:channel:entries channel="books" limit="4" category="not 102" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
+            <div class="span3">
+              <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
             </div>
           {/exp:channel:entries}
       </div>
