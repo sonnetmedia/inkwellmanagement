@@ -6,6 +6,7 @@
 		<div class="row" style="{if segment_2 == 'alpha'}display:none;{/if}">
 			<!-- /these open the footer 	-->
 			<div class="span12">
+				{if segment_3 == "young-readers"}<h3>Authors</h3>{/if}
 				<div class="short_list" id="images">
 					{if segment_2}
 						{exp:channel:entries channel="clients" limit="18" disable="category_fields|member_data|pagination" orderby="random" search:person_image="not IS_EMPTY"}
@@ -17,6 +18,49 @@
 								</a>
 							</div>
 						{/exp:channel:entries}
+
+					{if segment_3 == "young-readers"}
+					    <div class="span12 first-row">
+					    	<h3>Books</h3>
+					      <div class="row">
+					          {exp:channel:entries channel="books" category="87&102" limit="4" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" dynamic="no"}
+					            <div class="span3">
+					                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
+					            </div>
+					          {/exp:channel:entries}
+					      </div>
+					    </div>
+
+					    <div class="span12 first-row">
+					      <div class="row">
+					          {exp:channel:entries channel="books" limit="4" category="87" disable="category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes" dynamic="no"}
+					            <div class="span3">
+					              <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
+					            </div>
+					          {/exp:channel:entries}
+					      </div>
+					    </div>
+
+					    <div class="span12">
+					    	<h3>News</h3>
+					      <div class="row">
+						      {exp:channel:entries channel="news" limit="6" offset="" dynamic="no" category="103" disable="category_fields|member_data|pagination" orderby="date" sort="desc"}
+						      <div class="span6 home-news">
+						        <h3 style="margin-top:1.5em;margin-bottom:.5em;">
+						          <a href="{comment_url_title_auto_path}" id="{url_title_path}" title="{title}">
+						            {title}
+						          </a>
+						        </h3>
+						        <ul style="margin:0;" class="inline-list"><li>{entry_date format="%F %d, %Y"}</li><li>{exp:playa:children field="article_related_author" backspace="1"}{if count =='1'} | News about {/if}</li><li><a href="{path=client/{url_title}}">{title}</a></li><li>,{/exp:playa:children}</li></ul>
+						        {article_description}
+						        </div>
+						      {/exp:channel:entries}
+
+					      </div>
+					    </div>
+					{/if}
+
+
 					{if:else}
 						{exp:channel:entries channel="clients" limit="18" disable="category_fields|member_data|pagination" orderby="random" category="not 98" search:person_image="not IS_EMPTY"}
 							<div class="block_image">
