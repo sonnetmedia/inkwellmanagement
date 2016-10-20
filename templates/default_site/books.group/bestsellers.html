@@ -14,7 +14,7 @@
       <div class="row">
           {exp:channel:entries channel="books" category="104" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
             <div class="span3">
-                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
+                <a href="{url_title}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
             </div>
           {/exp:channel:entries}
       </div>
