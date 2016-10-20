@@ -3572,6 +3572,9 @@ td {
 .first-row {
   margin-bottom: 2rem;
 }
+.stacks img {
+  margin-bottom: 2rem;
+}
 .row_spaced {
   margin: 3em auto 2em;
 }
