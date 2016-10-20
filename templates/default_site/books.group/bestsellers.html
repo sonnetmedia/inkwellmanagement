@@ -1,0 +1,26 @@
+{embed="global/_page_top" page_title="Bestsellers" body_id="bestsellers" meta="company"}
+<div class="container">
+  <div class="row primary_canvas">
+
+    </div><!-- /span6 columns -->
+</div><!--  /row -->
+
+
+<div class="page_wrapper">
+  <div class="container">
+
+    <div class="span12 first-row">
+    	<h3>Best Sellers</h3>
+      <div class="row">
+          {exp:channel:entries channel="books" category="104" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
+            <div class="span3">
+                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
+            </div>
+          {/exp:channel:entries}
+      </div>
+    </div><!-- /span6 columns -->
+
+
+  </div><!-- /container -->
+</div><!--  /page_wrapper -->
+{embed="global/_page_bottom"}
