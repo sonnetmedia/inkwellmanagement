@@ -1,4 +1,14 @@
 {embed="global/_page_top" page_title="Home" body_id="home" meta="company"}
+{!-- 7776000 seconds = 90 days  --}
+{!-- 15550000 seconds  = 180 days  --}
+
+<?php
+        $start_time = $this->EE->localize->format_date('%Y-%m-%d %H:%i', $this->EE->localize->now - 15550000);
+?>
+
+<?php
+        $end_time = $this->EE->localize->format_date('%Y-%m-%d %H:%i', $this->EE->localize->now + 15550000);
+?>
 
 
 <div class="container">

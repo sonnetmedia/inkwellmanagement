@@ -4790,4 +4790,6 @@ margin-top: 0;
 
 #slidedeck_frame img {
   cursor: pointer;
+  width: 220px;
+  height: 330px;
 }
