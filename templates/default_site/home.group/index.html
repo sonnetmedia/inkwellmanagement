@@ -1,7 +1,14 @@
-
-
 {embed="global/_page_top" page_title="Home" body_id="home" meta="company"}
 
+<script type="text/javascript">
+        /* Initiate the SlideDeck */
+    $('.skin-super-simple dl.slidedeck').slidedeck({
+      autoPlay: true,
+      cycle: true,
+      hideSpines: true,
+      autoPlayInterval: 2500, // 2.5 seconds
+    });
+</script>
 
 
 <div class="container">
@@ -12,27 +19,107 @@ img.shadow {
   background: none;
 }
 </style>
-    <div class="span12 first-row">
-      <div class="row">
-          {exp:channel:entries channel="books" category="102" limit="4" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" }
-            <div class="span3">
-                <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
-            </div>
-          {/exp:channel:entries}
-      </div>
-    </div><!-- /span6 columns -->
 
-    <div class="span12">
-      <div class="row">
-          {exp:channel:entries channel="books" limit="4" category="not 102" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
-            <div class="span3">
-              <a href="client/{related_author}{url_title}{/related_author}">{exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}</a>
+      <div id="slidedeck_frame">
+        <div class="row">
+          <div class="span3 visible-desktop cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-reverse=true
+            data-cycle-timeout=0
+            data-cycle-speed=2000
+            data-index=1>
+              {exp:channel:entries channel="books" category="102" limit="5" offset="0" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+              {/exp:channel:entries}
             </div>
-          {/exp:channel:entries}
-      </div>
-    </div><!-- /span6 columns -->
-    </div><!--  /row -->
-  </div>
+            <div class="span3  cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-timeout=0
+            data-cycle-speed=2000
+            data-index=6>
+              {exp:channel:entries channel="books" category="102" limit="5" offset="5" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+              {/exp:channel:entries}
+            </div>
+            <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-timeout=0
+            data-cycle-reverse=true
+            data-cycle-speed=2000
+            data-index=3>
+              {exp:channel:entries channel="books" category="102" limit="5" offset="10" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+
+
+                {!-- leave the div in place --}
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+
+
+              {/exp:channel:entries}
+            </div>
+            <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-timeout=0
+            data-cycle-reverse=true
+            data-cycle-speed=2000
+            data-index=8>
+              {exp:channel:entries channel="books" category="102" limit="5" offset="15" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+
+
+                {!-- leave the div in place --}
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+
+
+              {/exp:channel:entries}
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="span3 visible-desktop cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-reverse=true
+            data-cycle-timeout=0
+            data-cycle-speed=2000
+            data-index=5>
+              {exp:channel:entries channel="books" category="not 102" limit="5" offset="0" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+              {/exp:channel:entries}
+            </div>
+            <div class="span3  cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-timeout=0
+            data-cycle-speed=2000
+            data-index=2>
+              {exp:channel:entries channel="books" category="not 102" limit="5" offset="5" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+              {/exp:channel:entries}
+            </div>
+            <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-timeout=0
+            data-cycle-reverse=true
+            data-cycle-speed=2000
+            data-index=7>
+              {exp:channel:entries channel="books" category="not 102" limit="5" offset="10" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+
+
+                {!-- leave the div in place --}
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+
+
+              {/exp:channel:entries}
+            </div>
+            <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
+            data-cycle-timeout=0
+            data-cycle-reverse=true
+            data-cycle-speed=2000
+            data-index=4>
+              {exp:channel:entries channel="books" category="not 102" limit="5" offset="15" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
+
+
+                {!-- leave the div in place --}
+                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+
+
+              {/exp:channel:entries}
+            </div>
+        </div>
+    </div>
+
 
 
 <div class="page_wrapper">
@@ -64,8 +151,11 @@ img.shadow {
         <h2><h2 style="margin-top:2em;"><a href="/videos/">Also, see our Videos</a></h2></h2>
       </div>
     </div>
+
   </div><!-- /container -->
 </div><!--  /page_wrapper -->
+</div>
+{embed="global/_page_bottom"}
 {if logged_in_group_id == '100'}
   <?php
  echo('START TIME: ');
@@ -74,6 +164,3 @@ img.shadow {
  echo($end_time);
   ?>
  {/if}
-
-
-{embed="global/_page_bottom"}
