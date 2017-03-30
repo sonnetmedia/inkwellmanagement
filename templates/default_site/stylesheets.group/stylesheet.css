@@ -4788,7 +4788,8 @@ h3 {
 margin-top: 0;
 }
 
-#slidedeck_frame img {
+#slidedeck_frame img,
+.book-covers img {
   cursor: pointer;
   width: 220px;
   height: 330px;

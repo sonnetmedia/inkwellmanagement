@@ -9,7 +9,7 @@
 				{if segment_3 == "young-readers"}<h3>Authors</h3>{/if}
 				<div class="short_list" id="images">
 					{if segment_2}
-						{exp:channel:entries channel="clients" limit="18" disable="category_fields|member_data|pagination" orderby="random" search:person_image="not IS_EMPTY"}
+						{exp:channel:entries channel="clients" limit="12" disable="category_fields|member_data|pagination" orderby="random" search:person_image="not IS_EMPTY"}
 							<div class="block_image">
 								<a href="/client/{url_title}" class="" title="{person_name_first} {person_name_last}">
 										{exp:ce_img:single src="{field_id_131}" class="image_info shadow" title="{title}" width="140" height="140"  quality="100" crop="yes|center,{field_id_132}|0,0|smart_scale" alt="{title}"}
@@ -20,7 +20,7 @@
 						{/exp:channel:entries}
 
 					{if segment_3 == "young-readers"}
-					    <div class="span12 first-row">
+					    <div class="span12 first-row book-covers">
 					    	<h3>Books</h3>
 					      <div class="row">
 					          {exp:channel:entries channel="books" category="87&102" limit="4" disable="member_data|pagination" orderby="random" search:cover_image="not IS_EMPTY" show_future_entries="yes" dynamic="no"}
@@ -31,7 +31,7 @@
 					      </div>
 					    </div>
 
-					    <div class="span12 first-row">
+					    <div class="span12 first-row book-covers">
 					      <div class="row">
 					          {exp:channel:entries channel="books" limit="4" category="87" disable="category_fields|member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes" dynamic="no"}
 					            <div class="span3">
