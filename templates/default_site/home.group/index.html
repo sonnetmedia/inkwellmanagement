@@ -1,15 +1,5 @@
 {embed="global/_page_top" page_title="Home" body_id="home" meta="company"}
 
-<script type="text/javascript">
-        /* Initiate the SlideDeck */
-    $('.skin-super-simple dl.slidedeck').slidedeck({
-      autoPlay: true,
-      cycle: true,
-      hideSpines: true,
-      autoPlayInterval: 2500, // 2.5 seconds
-    });
-</script>
-
 
 <div class="container">
   <div class="row primary_canvas">
@@ -28,8 +18,9 @@ img.shadow {
             data-cycle-speed=2000
             data-index=1>
               {exp:channel:entries channel="books" category="102" limit="5" offset="0" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
               {/exp:channel:entries}
             </div>
             <div class="span3  cycle-slideshow" data-cycle-fx=scrollVert
@@ -37,7 +28,9 @@ img.shadow {
             data-cycle-speed=2000
             data-index=6>
               {exp:channel:entries channel="books" category="102" limit="5" offset="5" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
               {/exp:channel:entries}
             </div>
             <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
@@ -46,12 +39,9 @@ img.shadow {
             data-cycle-speed=2000
             data-index=3>
               {exp:channel:entries channel="books" category="102" limit="5" offset="10" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-
-
-                {!-- leave the div in place --}
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
-
-
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
               {/exp:channel:entries}
             </div>
             <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
@@ -61,11 +51,9 @@ img.shadow {
             data-index=8>
               {exp:channel:entries channel="books" category="102" limit="5" offset="15" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
 
-
-                {!-- leave the div in place --}
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
-
-
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
               {/exp:channel:entries}
             </div>
         </div>
@@ -77,8 +65,9 @@ img.shadow {
             data-cycle-speed=2000
             data-index=5>
               {exp:channel:entries channel="books" category_group="12" limit="5" offset="1" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
               {/exp:channel:entries}
             </div>
             <div class="span3  cycle-slideshow" data-cycle-fx=scrollVert
@@ -86,7 +75,9 @@ img.shadow {
             data-cycle-speed=2000
             data-index=2>
               {exp:channel:entries channel="books" category_group="12" limit="5" offset="6" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
               {/exp:channel:entries}
             </div>
             <div class="span3 cycle-slideshow" data-cycle-fx=scrollVert
@@ -96,9 +87,9 @@ img.shadow {
             data-index=7>
               {exp:channel:entries channel="books" category_group="12" limit="5" offset="11" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
 
-
-                {!-- leave the div in place --}
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
 
 
               {/exp:channel:entries}
@@ -110,10 +101,9 @@ img.shadow {
             data-index=4>
               {exp:channel:entries channel="books" category_group="12" limit="5" offset="16" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
 
-
-                {!-- leave the div in place --}
-                  {exp:ce_img:single src="{cover_image}" width="220" crop="yes|smart_scale" height="330" class="shadow" alt="{title}" title="{title}"}
-
+                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+                  {/exp:ce_img:pair}
 
               {/exp:channel:entries}
             </div>

@@ -4787,3 +4787,7 @@ h3 {
 .copy h2:nth-child(1) {
 margin-top: 0;
 }
+
+#slidedeck_frame img {
+  cursor: pointer;
+}
