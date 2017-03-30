@@ -74,7 +74,7 @@ img.shadow {
             data-cycle-timeout=0
             data-cycle-speed=2000
             data-index=5>
-              {exp:channel:entries channel="books" category_group="12" limit="5" offset="0" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
+              {exp:channel:entries channel="books" category_group="12" limit="5" offset="1" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
                   {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
                   <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
                   {/exp:ce_img:pair}
