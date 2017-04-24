@@ -607,6 +607,11 @@ hr {
   border: 0;
   border-top: 1px solid #f6f6f6;
   border-bottom: 1px solid #ffffff;
+  width: 100%;
+  float: left;
+}
+.cycle-slideshow {
+  overflow: hidden;
 }
 abbr[title] {
   cursor: help;
