@@ -9,7 +9,7 @@
 				{if segment_3 == "young-readers"}<h3>Authors</h3>{/if}
 				<div class="short_list" id="images">
 					{if segment_2}
-						{exp:channel:entries channel="clients" limit="12" disable="category_fields|member_data|pagination" orderby="random" search:person_image="not IS_EMPTY"}
+						{exp:channel:entries channel="clients" {if segment_3 == "young-readers"}limit="12"{/if} disable="category_fields|member_data|pagination" orderby="random" search:person_image="not IS_EMPTY"}
 							<div class="block_image">
 								<a href="/client/{url_title}" class="" title="{person_name_first} {person_name_last}">
 										{exp:ce_img:single src="{field_id_131}" class="image_info shadow" title="{title}" width="140" height="140"  quality="100" crop="yes|center,{field_id_132}|0,0|smart_scale" alt="{title}"}
