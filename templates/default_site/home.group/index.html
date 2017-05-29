@@ -10,6 +10,85 @@
         $end_time = $this->EE->localize->format_date('%Y-%m-%d %H:%i', $this->EE->localize->now + 15550000);
 ?>
 
+{exp:stash:set_list name="cover_1" parse_tags="yes"}
+  {exp:channel:entries channel="books" category="102" limit="5" offset="0" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_2" parse_tags="yes"}
+  {exp:channel:entries channel="books" category="102" limit="5" offset="5" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_3" parse_tags="yes"}
+  {exp:channel:entries channel="books" category="102" limit="5" offset="10" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_4" parse_tags="yes"}
+  {exp:channel:entries channel="books" category="102" limit="5" offset="15" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_5" parse_tags="yes"}
+  {exp:channel:entries channel="books" category_group="12" limit="10" offset="0" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_6" parse_tags="yes"}
+  {exp:channel:entries channel="books" category_group="12" limit="10" offset="10" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_7" parse_tags="yes"}
+  {exp:channel:entries channel="books" category_group="12" limit="10" offset="20" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
+
+{exp:stash:set_list name="cover_8" parse_tags="yes"}
+  {exp:channel:entries channel="books" category_group="12" limit="10" offset="30" disable="member_data|pagination" orderby="date" search:cover_image="not IS_EMPTY"}
+    {stash:the_cover}
+      {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
+      <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
+      {/exp:ce_img:pair}
+    {/stash:the_cover}
+  {/exp:channel:entries}
+{/exp:stash:set_list}
 
 <div class="container">
   <div class="row primary_canvas">
@@ -27,44 +106,35 @@ img.shadow {
             data-cycle-timeout=0
             data-cycle-speed=2000
             data-index=1>
-              {exp:channel:entries channel="books" category="102" limit="5" offset="0" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_1" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
             <div class="span3 visible-desktop visible-tablet cycle-slideshow" data-cycle-fx=scrollVert
             data-cycle-timeout=0
             data-cycle-speed=2000
             data-index=6>
-              {exp:channel:entries channel="books" category="102" limit="5" offset="5" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_2" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
             <div class="span3 visible-desktop visible-tablet cycle-slideshow" data-cycle-fx=scrollVert
             data-cycle-timeout=0
             data-cycle-reverse=true
             data-cycle-speed=2000
             data-index=3>
-              {exp:channel:entries channel="books" category="102" limit="5" offset="10" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_3" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
             <div class="span3 visible-desktop visible-tablet cycle-slideshow" data-cycle-fx=scrollVert
             data-cycle-timeout=0
             data-cycle-reverse=true
             data-cycle-speed=2000
             data-index=8>
-              {exp:channel:entries channel="books" category="102" limit="5" offset="15" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY"}
-
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_4" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
         </div>
         <br><br>
@@ -74,48 +144,35 @@ img.shadow {
             data-cycle-timeout=0
             data-cycle-speed=2000
             data-index=5>
-              {exp:channel:entries channel="books" category_group="12" limit="5" offset="1" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_5" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
             <div class="span3 visible-desktop visible-tablet cycle-slideshow" data-cycle-fx=scrollVert
             data-cycle-timeout=0
             data-cycle-speed=2000
             data-index=2>
-              {exp:channel:entries channel="books" category_group="12" limit="5" offset="5" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_6" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
             <div class="span3 visible-desktop visible-tablet cycle-slideshow" data-cycle-fx=scrollVert
             data-cycle-timeout=0
             data-cycle-reverse=true
             data-cycle-speed=2000
             data-index=7>
-              {exp:channel:entries channel="books" category_group="12" limit="5" offset="10" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
-
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-
-
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_7" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
             <div class="span3 visible-desktop visible-tablet cycle-slideshow" data-cycle-fx=scrollVert
             data-cycle-timeout=0
             data-cycle-reverse=true
             data-cycle-speed=2000
             data-index=4>
-              {exp:channel:entries channel="books" category_group="12" limit="5" offset="15" disable="member_data|pagination" orderby="date" sort="desc" search:cover_image="not IS_EMPTY" show_future_entries="yes"}
-
-                  {exp:ce_img:pair src="{cover_image}" width="220" crop="yes|smart_scale" height="330"}
-                  <img src="{made}" width="{width}" height="{height}" class="shadow" alt="{title}" title="{title}" onclick="location.href='client/{related_author}{url_title}{/related_author}';" >
-                  {/exp:ce_img:pair}
-
-              {/exp:channel:entries}
+              {exp:stash:get_list name="cover_8" orderby="random"}
+              {the_cover}
+              {/exp:stash:get_list}
             </div>
         </div>
     </div>
