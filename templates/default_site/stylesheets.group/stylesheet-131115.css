@@ -3516,7 +3516,7 @@ body#about .navbar .row {
   line-height: 32px;
 }
 .nav-pills > li {
-  font-size: 16px;
+  font-size: 15px;
 }
 .nav-pills > li > a {
   padding: 0;
@@ -3733,7 +3733,7 @@ a:hover .tabular_data {
   z-index: 999999;
 }
 @media (min-width: 1200px) {
-  
+
 }
 @media (min-width: 768px) and (max-width: 979px) {
   .page_wrapper {
@@ -4740,6 +4740,6 @@ a:hover .tabular_data {
 }
 
 .btn-mini {
-		font-size: 11px;	
+		font-size: 11px;
 }
 
